@@ -1,9 +1,9 @@
 #!/bin/sh
 
 API="http://localhost:4741"
-URL_PATH="/letter"
+URL_PATH="/letters"
 
-curl "${API}${URL_PATH}/${ID}" \
+curl "${API}${URL_PATH}" \
   --include \
   --request GET \
   --header "Authorization: Bearer ${TOKEN}"

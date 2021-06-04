@@ -1,14 +1,14 @@
 #!/bin/bash
 
 API="http://localhost:4741"
-URL_PATH="/letter"
+URL_PATH="/letters"
 
-curl "${API}${URL_PATH}" \
+curl "${API}${URL_PATH}/${ID}" \
   --include \
-  --request POST \
+  --request PATCH \
   --header "Content-Type: application/json" \
-  --header "Authorization: Bearer ${TOKEN}" \
-  --data '{
+--header "Authorization: Bearer ${TOKEN}" \
+--data '{
     "letter": {
       "title": "'"${TITLE}"'",
       "body": "'"${BODY}"'"
