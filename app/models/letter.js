@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-// const commentSchema = require('./comment')
+const commentSchema = require('./comment')
 const letterSchema = new mongoose.Schema({
   title: {
     type: String,
@@ -8,12 +8,12 @@ const letterSchema = new mongoose.Schema({
   body: {
     type: String,
     required: true
+  },
+  comments: [commentSchema],
+  owner: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
   }
-  // comments: [commentSchema],
-  // owner: {
-  //   type: mongoose.Schema.Types.ObjectId,
-  //   ref: 'User'
-  // }
 },
 {
   timestamps: true
